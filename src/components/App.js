@@ -1,15 +1,21 @@
-import React from 'react';
-import Login from './Login';
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {handleInitialData} from '../actions/'
 
-function App() {
-  return (
-    <div>
-      <header>
-Hello
-<Login />
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData())
+  }
+
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+
 }
 
-export default App;
+
+export default connect()(App)
