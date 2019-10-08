@@ -18,32 +18,21 @@ class Nav extends Component {
 
     const baselink = process.env.PUBLIC_URL
     return (
-      <nav>
-      <ul id='nav'>
-        <li className="logout">
-          <button onClick={this.setUser}>Log out</button>
-        </li>
-        <li>
-          <span>Hello, {this.props.userName}!</span>
-        </li>
-        <li>
-          <NavLink to={`${baselink}/leaderboard`} activeClassName='active'>
-            Leaderboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={`${baselink}/New`} activeClassName='active'>
-            New Question
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={`${baselink}/`} exact={true} activeClassName='active'>
+      <div className="ui pointing secondary menu">
+          <NavLink to={`${baselink}/`} exact={true} activeClassName='active' className="item">
             Home
           </NavLink>
-        </li>
-
-      </ul>
-    </nav>
+          <NavLink to={`${baselink}/New`} activeClassName='active' className="item">
+            New Question
+          </NavLink>
+          <NavLink to={`${baselink}/leaderboard`} activeClassName='active' className="item">
+            Leaderboard
+          </NavLink>
+          
+          <div className="right menu">
+            <button className="ui button item" onClick={this.setUser}>Log out</button>
+          </div>
+      </div>
     );
   }
 

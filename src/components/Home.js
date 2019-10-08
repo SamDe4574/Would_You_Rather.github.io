@@ -14,32 +14,36 @@ class Home extends Component {
     const {answeredQuestionsIds, unansweredQuestionsIds } = this.props
 
     return (
-      <center>
-        <div >
-        <h3>Questions</h3>
-        <button
-          onClick={(e) => this.setState((prevState) => ({ showAnswered: !prevState.showAnswered }))}
-          style = {{cursor:'pointer'}}
-        >
-          {showAnswered === true ? 'Answered questions' : 'Unanswered questions'}
-        </button>
-        <div>
-          <ul>
-          {showAnswered
-            ? answeredQuestionsIds.map((id) => (
-              <li key={id}>
-                <Question id={id} />
-              </li>
-            ))
-            : unansweredQuestionsIds.map((id) => (
-              <li key={id}>
-                <Question id={id} />
-              </li>
-            ))}
-          </ul>
+      <div className="ui centered two column grid">
+        <div className="column">
+          <center><h3>Questions</h3></center>
+          <br/>
+          <button
+          className="ui toggle button fluid" aria-pressed={showAnswered}
+            onClick={(e) => this.setState((prevState) => ({ showAnswered: !prevState.showAnswered }))}
+          >
+            {showAnswered === true ? 'Answered questions' : 'Unanswered questions'}
+          </button>
+          <br/>
+          <div className="ui two column grid">
+            <div className="row">
+              {showAnswered
+                ? answeredQuestionsIds.map((id) => (
+                  <div className="column" key={id}>
+                    <Question id={id} />
+                    <br />
+                  </div>
+                ))
+                : unansweredQuestionsIds.map((id) => (
+                  <div className="column" key={id}>
+                    <Question id={id} />
+                    <br />
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
       </div>
-      </center>
     );
   }
 

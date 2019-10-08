@@ -5,27 +5,38 @@ import { Link } from 'react-router-dom'
 
 class Question extends Component {
   render() {
-    const { id, question: {optionOne, optionTwo} } = this.props
+    const { users,question,id, question: {optionOne, optionTwo} } = this.props
 
     return (
-      <div>
+      <div className="ui card centered">
+  <div className="content">
+    <img alt='avatar' src={users[question.author].avatarURL} className="ui mini right floated image" />
+    <div className="header">{users[question.author].name} Ask </div>
+    <div className="meta">Would you rather</div>
+    <div className="description">
+      {optionOne.text} <strong>OR</strong> {optionTwo.text}
+    </div>
+  </div>
+  <div className="extra content">
+    <div className="ui one buttons">
       <Link to={`/question/${id}`}>
-          <p> Would you rather &nbsp;
-            <span>{optionOne.text}</span>
-            &nbsp;OR&nbsp;
-            <span>{optionTwo.text}</span>
-          </p>
+        <button className="ui button">READ MORE</button>
       </Link>
-      </div>
+    </div>
+  </div>
+</div>
+
     )
   }
 }
 
-function mapStateToProps({ questions }, { id }) {
+
+function mapStateToProps({ users,questions }, { id }) {
   const question = questions[id]
   return {
     id,
-    question
+    question,
+    users
   }
 }
 
