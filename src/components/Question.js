@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 class Question extends Component {
@@ -9,11 +9,13 @@ class Question extends Component {
 
     return (
       <div>
+      <Link to={`/questions/${id}`} className='question'>
           <p> Would you rather &nbsp;
             <span className="questionOptionOne">{optionOne.text}</span>
             &nbsp;OR&nbsp;
             <span className="questionOptionTwo">{optionTwo.text}</span>
           </p>
+      </Link> 
       </div>
     )
   }
