@@ -19,7 +19,6 @@ class Home extends Component {
         <h3>Dashboard</h3>
         <button
           onClick={(e) => this.setState((prevState) => ({ showAnswered: !prevState.showAnswered }))}
-          className={showAnswered === true ? 'btn answered': 'btn unanswered'}
           style = {{cursor:'pointer'}}
         >
           {showAnswered === true ? 'Answered questions' : 'Unanswered questions'}
@@ -28,12 +27,12 @@ class Home extends Component {
           <ul>
           {showAnswered
             ? answeredQuestionsIds.map((id) => (
-              <li key={id} className="homeList">
+              <li key={id}>
                 <Question id={id} />
               </li>
             ))
             : unansweredQuestionsIds.map((id) => (
-              <li key={id} className="homeList">
+              <li key={id}>
                 <Question id={id} />
               </li>
             ))}

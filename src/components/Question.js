@@ -9,13 +9,13 @@ class Question extends Component {
 
     return (
       <div>
-      <Link to={`/questions/${id}`} className='question'>
+      <Link to={`/question/${id}`}>
           <p> Would you rather &nbsp;
-            <span className="questionOptionOne">{optionOne.text}</span>
+            <span>{optionOne.text}</span>
             &nbsp;OR&nbsp;
-            <span className="questionOptionTwo">{optionTwo.text}</span>
+            <span>{optionTwo.text}</span>
           </p>
-      </Link> 
+      </Link>
       </div>
     )
   }

@@ -4,7 +4,7 @@ import {handleInitialData} from '../actions/'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './Home';
 import Login from './Login';
-import Question from './Question';
+import QuestionDetails from './QuestionDetails';
 import NotFound from './NotFound';
 
 
@@ -22,7 +22,7 @@ class App extends Component {
             ? <Login />
             : <Switch>
                 <Route path='/' exact={true} component={Home}/>
-                <Route path='/question/:id' component={Question}/>
+                <Route path='/question/:id' component={QuestionDetails}/>
                 <Route component={NotFound}/>
               </Switch>
           }

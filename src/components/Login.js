@@ -5,7 +5,7 @@ import User from './User'
 class Login extends Component {
   render() {
     return (
-      <div className='tweet'>
+      <div>
         <h1>Pick a user</h1>
         <ul>
           {this.props.users.map((id) => (
