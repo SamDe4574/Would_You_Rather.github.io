@@ -11,12 +11,12 @@ class Home extends Component {
 
   render() {
     const { showAnswered } = this.state
-    const { authedUser, answeredQuestionsIds, unansweredQuestionsIds } = this.props
+    const {answeredQuestionsIds, unansweredQuestionsIds } = this.props
 
     return (
       <center>
         <div >
-        <h3>Dashboard</h3>
+        <h3>Questions</h3>
         <button
           onClick={(e) => this.setState((prevState) => ({ showAnswered: !prevState.showAnswered }))}
           style = {{cursor:'pointer'}}

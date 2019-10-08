@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {setAuthedUser} from '../actions/authedUser'
-import { Link } from 'react-router-dom'
 
 class User extends Component {
   setUser = (e) => {

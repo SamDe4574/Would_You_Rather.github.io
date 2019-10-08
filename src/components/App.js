@@ -7,6 +7,7 @@ import Home from './Home';
 import Login from './Login';
 import QuestionDetails from './QuestionDetails';
 import NotFound from './NotFound';
+import New from './New';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
             <Switch>
                 <Route path='/' exact={true} component={Home}/>
                 <Route path='/question/:id' component={QuestionDetails}/>
+                <Route path='/New' component={New}/>
                 <Route component={NotFound}/>
             </Switch>
             </div>
