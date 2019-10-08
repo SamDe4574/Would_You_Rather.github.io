@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {handleInitialData} from '../actions/'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Nav from './Nav';
 import Home from './Home';
 import Login from './Login';
 import QuestionDetails from './QuestionDetails';
@@ -20,11 +21,15 @@ class App extends Component {
           {
             this.props.loading === true
             ? <Login />
-            : <Switch>
+            :
+            <div>
+            <Nav />
+            <Switch>
                 <Route path='/' exact={true} component={Home}/>
                 <Route path='/question/:id' component={QuestionDetails}/>
                 <Route component={NotFound}/>
-              </Switch>
+            </Switch>
+            </div>
           }
         </div>
       </Router>
