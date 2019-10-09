@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Divider,Rating } from 'semantic-ui-react'
 
 
-class LeaderBoard extends Component {
+class Leaderboard extends Component {
 
   render () {
 
@@ -63,4 +63,4 @@ function mapStateToProps ({users}) {
   }
 }
 
-export default connect(mapStateToProps)(LeaderBoard)
+export default connect(mapStateToProps)(Leaderboard)
