@@ -10,7 +10,7 @@ class Question extends Component {
     return (
       <div className="ui card centered">
   <div className="content">
-    <img alt='avatar' src={users[question.author].avatarURL} className="ui mini right floated image" />
+    <img alt='avatar' src={users[question.author].avatarURL} className="ui tiny right floated image" />
     <div className="header">{users[question.author].name} Ask </div>
     <div className="meta">Would you rather</div>
     <div className="description">

@@ -22,6 +22,7 @@ class QuestionDetails extends Component {
     dispatch(handleSaveQuestion(authedUser, id, selectedOption))
 
   }
+
   render() {
     if (this.props.question === undefined) {
       return <Route component={NotFound}/>
@@ -33,44 +34,53 @@ class QuestionDetails extends Component {
       const totalOfVotes = optionOneVotes + optionTwoVotes
       const answer = question.optionOne.votes.includes(authedUser)
 
-      return (<div>
+      return (
+        <div className='ui card centered column grid'>
+        <div className='row'>
         <h1>Question Details</h1>
-        <div>
-          <h3>
-            {users[author].name}
-            asks
-          </h3>
-          <div>
-            <img src={this.props.users[author].avatarURL} alt={`${this.props.users[author].name}'s avatar`} className="avatar"/>
-            <hr/>
-            <div>
-              {
-                answered === true && (<div>
-                  <h3>Results</h3>
-                  <Stats option={optionOne.text} optionCount={optionOneVotes} totalOfVotes={totalOfVotes} chosen={answer}/>
-                  <p>{answer}</p>
-
-                  <Stats option={optionTwo.text} optionCount={optionTwoVotes} totalOfVotes={totalOfVotes} chosen={!answer}/>
-                </div>)
-              }
-              {
-                answered === false && (<div>
-                  <h3>Would you rather...</h3>
-                  <form>
-                    <label>
-                      <input type="radio" name="options" value='optionOne' checked={this.state.selectedOption === "optionOne"} onChange={this.updateCategory}/> {optionOne.text}
-                    </label>
-                    <label>
-                      <input type="radio" name="options" value='optionTwo' checked={this.state.selectedOption === "optionTwo"} onChange={this.updateCategory}/> {optionTwo.text}
-                    </label>
-                    <button type="submit" onClick={this.handleSubmit}>Submit</button>
-                  </form>
-                </div>)
-              }
-
-            </div>
-          </div>
         </div>
+
+        <div className='row'>
+        <img src={this.props.users[author].avatarURL} alt={`${this.props.users[author].name}'s avatar`} className="ui small image"/>
+        </div>
+
+          <h3>{users[author].name}</h3>
+          <div className="content">
+              {
+                answered === true && (
+                <div className='ui centered'>
+                  <h3>Results</h3>
+
+                  <Stats option={optionOne.text} optionCount={optionOneVotes} totalOfVotes={totalOfVotes} chosen={answer}/>
+                  <br />
+                  <Stats option={optionTwo.text} optionCount={optionTwoVotes} totalOfVotes={totalOfVotes} chosen={!answer}/>
+                </div>
+              )
+              }
+              {
+                answered === false && (
+                  <form className="ui form">
+                    <div className="ui grey header">
+                      Would you rather :
+                    </div>
+                    <div className="field">
+                      <div className="ui radio">
+                        <input type="radio" className="hidden"  name="options" value='optionOne' checked={this.state.selectedOption === "optionOne"} onChange={this.updateCategory}/>
+                        <label className='ui blue header'> {optionOne.text}</label>
+                      </div>
+                    </div>
+                    <div className="field">
+                      <div className="ui radio">
+                        <input type="radio" className="hidden"  name="options" value='optionTwo' checked={this.state.selectedOption === "optionTwo"} onChange={this.updateCategory}/>
+                        <label className='ui green header'> {optionTwo.text}</label>
+                      </div>
+                    </div>
+                    <button className='ui positive button fluid' type="submit" onClick={this.handleSubmit}>Submit</button>
+                </form>
+              )}
+            </div>
+
+
       </div>)
     }
   }

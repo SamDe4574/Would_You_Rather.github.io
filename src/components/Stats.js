@@ -1,21 +1,26 @@
 import React from 'react'
+import { Progress } from 'semantic-ui-react'
+
 
 const Stats = (props) => {
   const {option, optionCount, totalOfVotes, chosen} = props
-  return (<div>
-    {
-      chosen && (<div>Your
-        <br/>
-        vote</div>)
-    }
-    <p>Would you rather {option}</p>
-    <div>
-      <div></div>
+  return (
+<div className='row'>
+    {chosen ?
+    <div className='row'>
+      <h4 class="ui green header">Your vote</h4>
+      <h4 class="ui green header">Would you rather {option}</h4>
+      <Progress value={optionCount} total={totalOfVotes} progress='ratio'  indicating/>
+      <h5>{optionCount} out of {totalOfVotes} votes</h5>
     </div>
-    <p>{optionCount}
-      out of {totalOfVotes}
-      votes
-    </p>
-  </div>)
+    :
+    <div className='row'>
+      <h4 class="ui grey header">Would you rather {option}</h4>
+      <Progress value={optionCount} total={totalOfVotes} progress='ratio'  indicating/>
+      <h5>{optionCount} out of {totalOfVotes} votes</h5>
+    </div>
+    }
+</div>
+  )
 }
 export default Stats
