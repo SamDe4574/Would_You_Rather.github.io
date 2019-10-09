@@ -9,10 +9,15 @@ class User extends Component {
   }
   render() {
     return (
-      <a href="#user" onClick={this.setUser} className='tweet'>
-        <img src={this.props.avatar} alt={`${this.props.name}'s avatar`} className="avatar"/>
-        <span>{this.props.name}</span>
-      </a>
+      <div className="ui card">
+  <div className="image"><img src={this.props.avatar} alt={`${this.props.name}'s avatar`}/></div>
+  <div className="content">
+    <div className="header">{this.props.name}</div>
+  </div>
+  <div className="extra content">
+    <button className="ui green basic button" onClick={this.setUser} >Login As {this.props.name}</button>
+  </div>
+</div>
     )
   }
 }

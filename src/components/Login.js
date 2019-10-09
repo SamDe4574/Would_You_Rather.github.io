@@ -5,14 +5,13 @@ import User from './User'
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div className="ui grid">
+        <div className="centered row">
         <h1>Pick a user</h1>
-        <ul>
-          {this.props.users.map((id) => (
-              <li key={id}><User id={id}/></li>
-            ))
-          }
-        </ul>
+        </div>
+        <div className="ui centered cards row">
+            {this.props.users.map((id) => (<User id={id}/>))}
+        </div>
       </div>
     );
   }

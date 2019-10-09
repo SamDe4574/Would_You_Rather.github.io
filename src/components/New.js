@@ -41,40 +41,45 @@ class New extends Component {
       return <Redirect to='/' />
     }
     return (
-      <div>
-           <h3 className="center">Compose New Question</h3>
+      <div className="ui card centered column grid">
+        <div className="row">
+        <h3>Would You Rather</h3>
+        </div>
 
-           <Form className="new-question" onSubmit={this.handleSubmit}>
+        <div className="row">
+            <Form onSubmit={this.handleSubmit}>
 
-         <Form.Field>
-           <TextArea
-           placeholder="Enter the first option"
-           value={optionOne}
-           onChange={this.handleChange}
-           name="optionOne"
-           maxLength={280}
-           />
-         </Form.Field>
+             <Form.Field>
+               <TextArea
+               placeholder="Enter the first option"
+               value={optionOne}
+               onChange={this.handleChange}
+               name="optionOne"
+               maxLength={280}
+               />
+             </Form.Field>
 
-         <Divider horizontal>Or</Divider>
+             <Divider horizontal>Or</Divider>
 
-         <Form.Field>
-           <TextArea
-           placeholder="Enter the second option"
-           value={optionTwo}
-           onChange={this.handleChange}
-           name="optionTwo"
-           maxLength={280}
-           />
-         </Form.Field>
+             <Form.Field>
+               <TextArea
+               placeholder="Enter the second option"
+               value={optionTwo}
+               onChange={this.handleChange}
+               name="optionTwo"
+               maxLength={280}
+               />
+             </Form.Field>
 
-           <Button
-           positive
-           type='submit'
-           disabled={optionOne === '' || optionTwo === ''}
-           >Submit</Button>
+               <Button
+               fluid
+               positive
+               type='submit'
+               disabled={optionOne === '' || optionTwo === ''}
+               >Submit</Button>
 
-           </Form>
+               </Form>
+             </div>
 
            </div>
     );

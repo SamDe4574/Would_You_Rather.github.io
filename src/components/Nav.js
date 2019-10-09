@@ -28,9 +28,9 @@ class Nav extends Component {
           <NavLink to={`${baselink}/leaderboard`} activeClassName='active' className="item">
             Leaderboard
           </NavLink>
-          
+
           <div className="right menu">
-            <button className="ui button item" onClick={this.setUser}>Log out</button>
+            <button className="ui red basic button item" onClick={this.setUser}>Log out</button>
           </div>
       </div>
     );

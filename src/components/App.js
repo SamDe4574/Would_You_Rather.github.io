@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <Router basename={'/Would_you_rather'}>
-        <div className='App'>
+        <div className='ui centered'>
           {
             this.props.loading === true
             ? <Login />

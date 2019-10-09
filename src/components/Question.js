@@ -18,9 +18,9 @@ class Question extends Component {
     </div>
   </div>
   <div className="extra content">
-    <div className="ui one buttons">
+    <div className="ui one buttons ">
       <Link to={`/question/${id}`}>
-        <button className="ui button">READ MORE</button>
+        <button className="ui button">View Question</button>
       </Link>
     </div>
   </div>
