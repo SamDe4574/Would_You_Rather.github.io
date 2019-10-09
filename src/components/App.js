@@ -8,6 +8,7 @@ import Login from './Login';
 import QuestionDetails from './QuestionDetails';
 import NotFound from './NotFound';
 import New from './New';
+import Leaderboard from './Leaderboard';
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
                 <Route path='/' exact={true} component={Home}/>
                 <Route path='/question/:id' component={QuestionDetails}/>
                 <Route path='/New' component={New}/>
+                <Route path='/Leaderboard' component={Leaderboard}/>
                 <Route component={NotFound}/>
             </Switch>
             </div>

@@ -10,7 +10,7 @@ class Login extends Component {
         <h1>Pick a user</h1>
         </div>
         <div className="ui centered cards row">
-            {this.props.users.map((id) => (<User id={id}/>))}
+            {this.props.users.map((id) => (<User id={id} key={id}/>))}
         </div>
       </div>
     );

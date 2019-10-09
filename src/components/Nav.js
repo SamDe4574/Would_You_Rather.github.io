@@ -25,7 +25,7 @@ class Nav extends Component {
           <NavLink to={`${baselink}/New`} activeClassName='active' className="item">
             New Question
           </NavLink>
-          <NavLink to={`${baselink}/leaderboard`} activeClassName='active' className="item">
+          <NavLink to={`${baselink}/Leaderboard`} activeClassName='active' className="item">
             Leaderboard
           </NavLink>
 

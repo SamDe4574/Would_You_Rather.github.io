@@ -10,13 +10,13 @@ class User extends Component {
   render() {
     return (
       <div className="ui card">
-  <div className="image"><img src={this.props.avatar} alt={`${this.props.name}'s avatar`}/></div>
-  <div className="content">
-    <div className="header">{this.props.name}</div>
-  </div>
-  <div className="extra content">
-    <button className="ui green basic button" onClick={this.setUser} >Login As {this.props.name}</button>
-  </div>
+        <div className="image"><img src={this.props.avatar} alt={`${this.props.name}'s avatar`}/></div>
+        <div className="content">
+          <div className="header">{this.props.name}</div>
+        </div>
+        <div className="extra content">
+          <button className="ui green basic button" onClick={this.setUser} >Login As {this.props.name}</button>
+        </div>
 </div>
     )
   }
